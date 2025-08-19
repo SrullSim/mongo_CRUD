@@ -1,0 +1,51 @@
+# קבצי מערכת הפעלה
+.DS_Store
+Thumbs.db
+
+# קבצי קומפילציה של פייתון
+__pycache__/
+*.py[cod]
+*$py.class
+
+# קבצי לוג
+*.log
+
+# תיקיות בנייה
+build/
+dist/
+out/
+
+# קבצי חבילות
+*.egg-info/
+.eggs/
+*.egg
+
+# תיקיות סביבת עבודה וירטואלית
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# קבצי קונפיגורציה של PyCharm
+.idea/
+
+# קבצי קונפיגורציה של עורך קוד נוסף (VSCode)
+.vscode/
+
+# קבצי בדיקות/כיסוי קוד
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# קבצים אישיים/סודיים
+*.env
