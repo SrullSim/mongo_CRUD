@@ -17,7 +17,7 @@ class DAL_mongo:
         if self.user and self.password:
             URI = f"mongodb://{self.user}:{self.password}@{self.host}::27017"
         else:
-            URI = f"mongodb://{self.user}:27017"
+            URI = f"mongodb://{self.host}:27017"
 
         return URI
 
@@ -36,8 +36,8 @@ class DAL_mongo:
         if self.client:
             db = self.client[self.database]
             collection = db[self.collection]
-            data = collection.find()
-            return data
+            data = collection.find({}, {"_id": 0})
+            return list(data)
 
 
 
@@ -48,4 +48,10 @@ class DAL_mongo:
             collection.delete_one({'id': id})
 
 
+    def insert_one(self, data):
+        if self.client:
+            db = self.client[self.database]
+            collection = db[self.collection]
+            data = collection.insert_one(data)
+            return data
 
