@@ -26,8 +26,10 @@ class DAL_mongo:
     def open_connection(self):
         try:
             self.client = MongoClient(self.URI)
+            self.client.admin.command("ping")
             return True
         except Exception as e:
+            self.client = None
             print("Error: ", e)
             return False
 

@@ -18,6 +18,7 @@ dal = DAL_mongo(HOST, DB, COLLECTION, USER, PASSWORD)
 @app.get("/")
 async def status():
     connection = dal.open_connection()
+    dal.close_connection()
     if connection:
         return {"status: ": "ok"}
     else:
