@@ -67,4 +67,3 @@ class DAL_mongo:
     def close_connection(self):
         if self.client:
             self.client.close()
-
